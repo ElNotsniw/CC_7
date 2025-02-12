@@ -91,3 +91,21 @@ function calculateShippingCost(weight, location, expedited = false) {
 
 console.log(`Shipping Cost: $${calculateShippingCost(10, "USA", true)}`);
 console.log(`Shipping Cost: $${calculateShippingCost(5, "Canada", false)}`);
+
+
+
+// Task 5 - Returning Values (Scenario: Business Loan Interest Calculation)
+
+
+// Setting up the function to calculate interest
+
+function calculateInterest(principal, rate, years) {
+    let interest = principal * rate * years;
+    return interest;
+}
+
+
+// Declaring values to test out the function and console-log the results
+
+console.log(`Interest Amount: $${calculateInterest(1000, 0.05, 3)}`)
+console.log(`Interest Amount: $${calculateInterest(5000, 0.07, 5)}`)
