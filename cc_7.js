@@ -109,3 +109,22 @@ function calculateInterest(principal, rate, years) {
 
 console.log(`Interest Amount: $${calculateInterest(1000, 0.05, 3)}`)
 console.log(`Interest Amount: $${calculateInterest(5000, 0.07, 5)}`)
+
+
+
+// Task 6 - Higher-Order Functions (Scenario: Filtering High-Value Transactions)
+
+
+// Setting up the function to filter high-value transactions
+
+let transactions = [500, 1200, 3000, 800, 2200];
+
+function filterHighValueTransactions(transactions, filterfunction) {
+    return transactions.filter(filterfunction);
+}
+
+
+// Console-logging the results to filter out the values that are greater than 1000
+
+console.log(`High-Value Transactions: ${filterHighValueTransactions(transactions, amount => amount > 1000)}`)
+
