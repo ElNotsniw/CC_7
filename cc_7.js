@@ -10,8 +10,9 @@ function calculateInvoice(subtotal, taxrate, discount) {
 
 // Declaring values in the function and console-logging it to test the code
 
-console.log(`Grand Total: $${calculateInvoice(100, 0.07, 15)}`)
-console.log(`Grand Total: $${calculateInvoice(200, 0.10, 50)}`)
+console.log(`Grand Total: $${calculateInvoice(100, 0.07, 15)}`)                     // Output: Grand Total: $92
+console.log(`Grand Total: $${calculateInvoice(200, 0.10, 50)}`)                     // Output: Grand Total: $170
+
 
 
 
@@ -29,8 +30,10 @@ const calculateHourlyWage = function(salary, hoursPerWeek) {
 
 // Declaring values in the function and console-logging it
 
-console.log(`Hourly Wage: $${calculateHourlyWage(52000, 40)}`);
-console.log(`Hourly Wage: $${calculateHourlyWage(80000, 30)}`)
+console.log(`Hourly Wage: $${calculateHourlyWage(52000, 40)}`);                 // Output: Hourly Wage: $25
+console.log(`Hourly Wage: $${calculateHourlyWage(80000, 30)}`)                  // Output: Hourly Wage: $51.28
+
+
 
 
 
@@ -58,8 +61,8 @@ const calculateLoyaltyDiscount = (amount, years) => {
 
 //  Setting up the values and console-logging the results
 
-console.log(`Loyalty Discount: $${calculateLoyaltyDiscount(100, 6)}`)
-console.log(`Loyalty Discount: $${calculateLoyaltyDiscount(200, 2)}`)
+console.log(`Loyalty Discount: $${calculateLoyaltyDiscount(100, 6)}`)                   // Output: $85
+console.log(`Loyalty Discount: $${calculateLoyaltyDiscount(200, 2)}`)                   // Output: $190
 
 
 
@@ -89,8 +92,11 @@ function calculateShippingCost(weight, location, expedited = false) {
 
 // Declaring values to test the function and console-log the results
 
-console.log(`Shipping Cost: $${calculateShippingCost(10, "USA", true)}`);
-console.log(`Shipping Cost: $${calculateShippingCost(5, "Canada", false)}`);
+console.log(`Shipping Cost: $${calculateShippingCost(10, "USA", true)}`);               // Output: Shipping Cost: $20
+console.log(`Shipping Cost: $${calculateShippingCost(5, "Canada", false)}`);            // Output: Shipping Cost: $13.5
+
+
+
 
 
 
@@ -107,8 +113,11 @@ function calculateInterest(principal, rate, years) {
 
 // Declaring values to test out the function and console-log the results
 
-console.log(`Interest Amount: $${calculateInterest(1000, 0.05, 3)}`)
-console.log(`Interest Amount: $${calculateInterest(5000, 0.07, 5)}`)
+console.log(`Interest Amount: $${calculateInterest(1000, 0.05, 3)}`)            // Output: Interest Amount: $150
+console.log(`Interest Amount: $${calculateInterest(5000, 0.07, 5)}`)            // Output: Interest Amount: $1750.00
+
+
+
 
 
 
@@ -126,5 +135,29 @@ function filterHighValueTransactions(transactions, filterfunction) {
 
 // Console-logging the results to filter out the values that are greater than 1000
 
-console.log(`High-Value Transactions: ${filterHighValueTransactions(transactions, amount => amount > 1000)}`)
+console.log(`High-Value Transactions: ${filterHighValueTransactions(transactions, amount => amount > 1000)}`)       // Output: High-Value Transactions: 1200,3000,2200
 
+
+
+
+
+// Task 7 - Closures (Scenario: Budget Tracker)
+
+// Creating a function to return another function to keep track of expenses and console-logging the balance
+
+function createbudgettracker () {
+    let balance = 0
+
+    return function(expense) {
+        balance += expense;
+        console.log(`Current Balance: $${balance}`)
+    };
+}   
+
+// Declaring values to keep a running balance
+
+const balance = createbudgettracker();
+
+balance(50)                         // Output: Current Balance: $50
+balance(100)                        // Output: Current Balance: $150
+balance(200)                        // Output: Current Balance: $350
