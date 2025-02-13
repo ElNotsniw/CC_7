@@ -161,3 +161,25 @@ const balance = createbudgettracker();
 balance(50)                         // Output: Current Balance: $50
 balance(100)                        // Output: Current Balance: $150
 balance(200)                        // Output: Current Balance: $350
+
+
+
+
+
+// Task 8 - Recursion in JavaScript
+
+// Setting up the base function and recursion function to calculate growth
+
+function calculategrowth(years, revenue) {
+    if (years >= 10) {
+        return revenue;
+    }
+    else {
+        return calculategrowth(years + 1, revenue * 1.05);
+    }
+}
+
+// Console-logging the recursion function and add values to see the results
+
+console.log(`Projected Revenue: $${calculategrowth(8,1000)}`)                // Output: Projected Revenue: $1102.5
+console.log(`Projected Revenue: $${calculategrowth(5,5000)}`)                // Output: Projected Revenue: $6381.40
